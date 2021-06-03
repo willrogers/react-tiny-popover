@@ -22,11 +22,12 @@
   "main": "dist/Popover.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc -p . && yarn copy-types",
+    "build": "tsc -p . && npm run copy-types",
+    "prepare": "npm run build",
     "clean": "rm -rf dist/",
     "copy-types": "cp src/index.d.ts dist/index.d.ts",
-    "start-demo": "cd docs && yarn start",
-    "watch": "tsc-watch -p . --onSuccess 'yarn copy-types'"
+    "start-demo": "cd docs && npm start",
+    "watch": "tsc-watch -p . --onSuccess 'npm run copy-types'"
   },
   "devDependencies": {
     "@types/react": "^16.8.23",
@@ -43,7 +44,6 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-react": "^7.19.0",
-    "eslint-plugin-react-hooks": "^4.0.0",
     "eslint-plugin-redux-saga": "^1.1.3",
     "prettier": "^2.0.5",
     "react": "^16.2.0",
